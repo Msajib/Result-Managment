@@ -70,8 +70,8 @@
                                 <span class="inbox-num"></span>
                             </li>
                             <li>
-                                <a href="<?php echo base_url() ?>teacherController/studentResult">
-                                    <i class="fas fa-shopping-basket"></i>Find Result</a>
+                                <a href="<?php echo base_url() ?>teacherController/selectSubject">
+                                    <i class="fas fa-shopping-basket"></i>Assign Result</a>
                             </li>
                             <li class="active has-sub">
                                 <a href="<?php echo base_url() ?>teacherController/assignSubject">
@@ -227,7 +227,7 @@
                                 </li>
                                 <li>
                                     <a href="<?php echo base_url() ?>teacherController/studentResult">
-                                        <i class="fas fa-shopping-basket"></i>Find Result</a>
+                                        <i class="fas fa-shopping-basket"></i>Assign Result</a>
                                 </li>
                                 <li class="active has-sub">
                                     <a href="<?php echo base_url() ?>teacherController/assignSubject">

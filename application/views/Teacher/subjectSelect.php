@@ -230,7 +230,7 @@
                                 </li>
                                 <li>
                                     <a href="<?php echo base_url() ?>teacherController/studentResult">
-                                        <i class="fas fa-shopping-basket"></i>Find Result</a>
+                                        <i class="fas fa-shopping-basket"></i>Assign Result</a>
                                 </li>
                                 <li class="active has-sub">
                                     <a href="<?php echo base_url() ?>teacherController/assignSubject">
@@ -313,7 +313,7 @@
                                             <?php foreach ($subject as $subject) { ?>
                                                     <div class="col-xs-6 text-left">
                                                         <div class="previous">
-                                                            <a type="button" class="btn-lg" href="<?php echo base_url()?>teacherController/assignSubject/<?php echo $subject->subCode ?>">
+                                                            <a type="button" class="btn-lg" href="<?php echo base_url()?>teacherController/studentResult/<?php echo $subject->subCode ?>/<?php echo $subject->semCode ?>">
                                                                 <span class="glyphicon glyphicon-zoom-in bg-c3 btn-lg btn-hover"><?php echo $subject->subCode ?>
                                                                 </span></a>
                                                         </div>

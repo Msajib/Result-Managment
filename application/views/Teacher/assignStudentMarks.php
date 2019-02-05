@@ -294,7 +294,7 @@
                                                                             <select name="semCode">
                                                                                 <option>Select Semester</option>
                                 <?php foreach ($semister as $sem) { ?>
-                                                                                                <option value="<?php echo $sem->semCode ?>"><?php echo $sem->semName ?></option>
+                                                                                                    <option value="<?php echo $sem->semCode ?>"><?php echo $sem->semName ?></option>
                                 <?php } ?>
                                                                             </select>
                                                                             <span class="input-group-btn">
@@ -314,31 +314,36 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <table class="table" id="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Student ID</th>
-                                                        <th>Result</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <?php foreach ($showSubject as $subject){?>
-                                                <tbody>
-                                                    <tr>
-                                                        <td><?php echo $subject->memberID?></td>
-                                                        <td>
-                                                            <div class="col-sm-4">          
-                                                                <input type="text" class="form-control" id="" placeholder="Enter Marks" name="result">
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <button class="bg-c1 btn-lg glyphicon glyphicon-plus-sign">ADD</button>
-                                                            <button class="btn-danger btn-lg glyphicon glyphicon-refresh">Update</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                                <?php }?>
-                                            </table>
+                                            <form action="<?php echo base_url() ?>teacherController/addMarksStudent" method="post">
+                                                <table class="table" id="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center">Student ID</th>
+                                                            <th class="">Result</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <?php foreach ($showSubject as $subject) { ?>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="text-center"><?php echo $subject->memberID ?>
+                                                                    <input type="hidden" class="form-control" name="memberID[]" value="<?php echo $subject->memberID;?>">
+                                                                    <input type="hidden" class="form-control" name="subCode[]" value="<?php echo $subject->subCode;?>">
+                                                                    <input type="hidden" class="form-control" name="semCode[]" value="<?php echo $subject->semCode;?>">
+                                                                </td>
+                                                                <td>
+                                                                    <div class="col-sm-4 centered">          
+                                                                        <input type="text" class="form-control" name="resultMark[]" value="<?php echo $subject->resultMark?>">
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    <?php } ?>
+
+                                                </table>
+                                                <div class="text-center">
+                                                    <button class="bg-c1 btn-lg btn-success glyphicon glyphicon-plus-sign" type="submit">Submit</button>
+                                                </div>
+                                            </form>
                                             <hr>
                                         </div>
                                     </div>

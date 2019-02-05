@@ -25,11 +25,11 @@ class teacher_Model extends CI_Model {
         $result = $query->result();
         return $result;
     }
-    function getSelectedSubject($semCode,$memberID){
+    function getSelectedSubject($semCode,$subCode){
         $this->db->select('*');
-        $this->db->from('teacherassignsubject');
+        $this->db->from('studentassignsubject');
+        $this->db->where('subCode', $subCode);
         $this->db->where('semCode', $semCode);
-        $this->db->where('memberID', $memberID);
         $query = $this->db->get();
         $result = $query->result();
         return $result;
@@ -42,6 +42,13 @@ class teacher_Model extends CI_Model {
         $result = $query->result();
         return $result;
     }
-    
+    function addMarks($value, $result,$subCode ,$semCode) {
+        $this->db->set('resultMark', $result); //value that used to update column  
+        $this->db->where('memberID', $value); //which row want to upgrade
+        $this->db->where('subCode', $subCode);
+        $this->db->where('semCode', $semCode);
+        $this->db->update('studentassignsubject');  //table name
+    }
+
 }
     
