@@ -57,7 +57,7 @@
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
-                            <li>
+                            <li class="active has-sub">
                                 <a class="js-arrow" href="<?php echo base_url() ?>teacherController/index">
                                     <i class="fas fa-tachometer-alt"></i>Dashboard
                                 </a>
@@ -65,17 +65,16 @@
                             <li>
                                 <a href="<?php echo base_url() ?>teacherController/">
                                     <i class="fas fa-chart-bar"></i>Student</a>
-                                <span class="inbox-num"></span>
                             </li>
                             <li>
-                                <a href="<?php echo base_url() ?>teacherController/studentResult">
-                                    <i class="fas fa-shopping-basket"></i>Find Result</a>
+                                <a href="<?php echo base_url() ?>teacherController/subjectSelect">
+                                    <i class="fas fa-shopping-basket"></i>Assign Result</a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url() ?>teacherController/assignSubject">
                                     <i class="fas fa-shopping-basket"></i>Subject Assaign</a>
                             </li>
-                            <li class="active has-sub">
+                            <li>
                                 <a href="<?php echo base_url() ?>teacherController/teacherProfile">
                                     <i class="fas fa-shopping-basket"></i>Profile</a>
                             </li>

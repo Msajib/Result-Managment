@@ -26,5 +26,9 @@ class student_Model extends CI_Model {
         $result = $query->result();
         return $result;
     }
+    function updateProfile($memberID,$data){
+        $this->db->where('memberID', $memberID);
+        $this->db->update('usertable', $data);
+    }
     
 }

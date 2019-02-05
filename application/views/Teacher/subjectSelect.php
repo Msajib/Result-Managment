@@ -63,8 +63,8 @@
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
-                            <li>
-                                <a href="<?php echo base_url() ?>teacherController/index">
+                            <li class="active has-sub">
+                                <a class="js-arrow" href="<?php echo base_url() ?>teacherController/index">
                                     <i class="fas fa-tachometer-alt"></i>Dashboard
                                 </a>
                             </li>
@@ -72,9 +72,9 @@
                                 <a href="<?php echo base_url() ?>teacherController/">
                                     <i class="fas fa-chart-bar"></i>Student</a>
                             </li>
-                            <li class="active has-sub">
-                                <a class="js-arrow" href="<?php echo base_url() ?>teacherController/studentResult">
-                                    <i class="fas fa-shopping-basket "></i>Assign Result</a>
+                            <li>
+                                <a href="<?php echo base_url() ?>teacherController/subjectSelect">
+                                    <i class="fas fa-shopping-basket"></i>Assign Result</a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url() ?>teacherController/assignSubject">

@@ -310,31 +310,31 @@
                                                 <div class="form-group">
                                                     <label class="col-md-12">First Name</label>
                                                     <div class="col-md-12">
-                                                        <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('firstName'); ?>">
+                                                        <input type="text" name="firstName" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('firstName'); ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-md-12">Last Name</label>
                                                     <div class="col-md-12">
-                                                        <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('lastName'); ?>">
+                                                        <input type="text"  readonly class="form-control form-control-line" name="lastName" value="<?php echo $this->session->userdata('lastName'); ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-md-12">Nick Name</label>
                                                     <div class="col-md-12">
-                                                        <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('nickName'); ?>">
+                                                        <input type="text" name="nickName" class="form-control form-control-line" value="<?php echo $this->session->userdata('nickName'); ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-md-12">Date of Birth</label>
                                                     <div class="col-md-12">
-                                                        <input type="date" class="form-control form-control-line" value="<?php echo $this->session->userdata('dateOfBirth'); ?>">
+                                                        <input type="date" class="form-control form-control-line" name="dateOfBirth" value="<?php echo $this->session->userdata('dateOfBirth'); ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-md-12">Place of Birth</label>
                                                     <div class="col-md-12">
-                                                        <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('placeOfBirth'); ?>">
+                                                        <input type="text" name="placeOfBirth" class="form-control form-control-line" value="<?php echo $this->session->userdata('placeOfBirth'); ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -342,8 +342,8 @@
                                                     <div class="col-md-12">
                                                         <select class="form-control form-control-line" name="gender">
                                                             <option>Gender</option>
-                                                            <option value="Mail">Mail</option>
-                                                            <option value="Femail">Femail</option>
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
                                                             <option value="Other">Other</option>
                                                         </select>
 
@@ -362,49 +362,49 @@
                                                 <div class="form-group">
                                                     <label class="col-md-12">Blood Group</label>
                                                     <div class="col-md-12">
-                                                        <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('bloodGroup'); ?>">
+                                                        <input type="text" class="form-control form-control-line" name="bloodGroup" value="<?php echo $this->session->userdata('bloodGroup'); ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-md-12">Religion</label>
                                                     <div class="col-md-12">
-                                                        <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('religion'); ?>">
+                                                        <input type="text"   class="form-control form-control-line" name="religion" value="<?php echo $this->session->userdata('religion'); ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-md-12">Nationality</label>
                                                     <div class="col-md-12">
-                                                        <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('nationality'); ?>">
+                                                        <input type="text"  class="form-control form-control-line" name="nationality" value="<?php echo $this->session->userdata('nationality'); ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-md-12">National ID</label>
                                                     <div class="col-md-12">
-                                                        <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('nationalID'); ?>">
+                                                        <input type="text"   class="form-control form-control-line" name="nationalID" value="<?php echo $this->session->userdata('nationalID'); ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-md-12">Passport</label>
                                                     <div class="col-md-12">
-                                                        <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('passport'); ?>">
+                                                        <input type="text"   class="form-control form-control-line" name="passport" value="<?php echo $this->session->userdata('passport'); ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-md-12">IM</label>
                                                     <div class="col-md-12">
-                                                        <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('IM'); ?>">
+                                                        <input type="text"   class="form-control form-control-line" name="IM" value="<?php echo $this->session->userdata('IM'); ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-md-12">Social Network ID</label>
                                                     <div class="col-md-12">
-                                                        <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('socialNetwork'); ?>">
+                                                        <input type="text" class="form-control form-control-line" name="socialNetwork" value="<?php echo $this->session->userdata('socialNetwork'); ?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-md-12">About You</label>
                                                     <div class="col-md-12">
-                                                        <textarea rows="2" class="form-control form-control-line"><?php echo $this->session->userdata('aboutYou'); ?></textarea>
+                                                        <textarea rows="2"  class="form-control form-control-line" name="aboutYou"><?php echo $this->session->userdata('aboutYou'); ?></textarea>
                                                     </div>
                                                 </div>
 

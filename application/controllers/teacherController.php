@@ -64,6 +64,31 @@ class teacherController extends CI_Controller {
         }
         redirect('teacherController/subjectSelect');
     }
+    function updateProfileInfo(){
+        $memberID=$this->session->userdata('memberID');
+        $data = array();
+        $data['firstName'] = $this->input->post('firstName',TRUE);
+        $data['lastName'] = $this->input->post('lastName',TRUE);
+        $data['nickName'] = $this->input->post('nickName',TRUE);
+        $data['dateOfBirth'] = $this->input->post('dateOfBirth',TRUE);
+        $data['placeOfBirth'] = $this->input->post('placeOfBirth',TRUE);
+        $data['gender'] = $this->input->post('gender',TRUE);
+        $data['maritalStatus'] = $this->input->post('maritalStatus',TRUE);
+        $data['bloodGroup'] = $this->input->post('bloodGroup',TRUE);
+        $data['religion'] = $this->input->post('religion',TRUE);
+        $data['nationality'] = $this->input->post('nationality',TRUE);
+        $data['NationalID'] = $this->input->post('nationalID',TRUE);
+        $data['passport'] = $this->input->post('passport',TRUE);
+        $data['IM'] = $this->input->post('IM',TRUE);
+        $data['socialNetwork'] = $this->input->post('socialNetwork',TRUE);
+        $data['aboutYou'] = $this->input->post('aboutYou',TRUE);
+        
+        $this->TModel->updateProfile($memberID,$data);
+        
+        redirect('teacherController/updateProfile');
+        
+        
+    }
     
     
     

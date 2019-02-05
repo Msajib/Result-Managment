@@ -49,6 +49,10 @@ class teacher_Model extends CI_Model {
         $this->db->where('semCode', $semCode);
         $this->db->update('studentassignsubject');  //table name
     }
+    function updateProfile($memberID,$data){
+        $this->db->where('memberID', $memberID);
+        $this->db->update('teachertable', $data);
+    }
 
 }
     
