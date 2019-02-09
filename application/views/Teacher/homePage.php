@@ -66,7 +66,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url() ?>teacherController/">
+                                <a href="<?php echo base_url() ?>teacherController/SearchStudentValue">
                                     <i class="fas fa-chart-bar"></i>Student</a>
                             </li>
                             <li>
@@ -271,8 +271,8 @@
                 </section>
                 <!-- END BREADCRUMB-->
 
-                <!-- STATISTIC-->
-<!--                <section class="statistic">
+<!--                 STATISTIC
+                <section class="statistic">
                     <div class="section__content section__content--p30">
                         <div class="container-fluid">
                 <?php foreach ($subject as $subject)
@@ -298,19 +298,20 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-xl-8">
+                                    <h4 style="color: red;"><?php echo $this->session->flashdata('message');?></h4>
                                     <!-- RECENT REPORT 2-->
-                                    <form>
+                                    <form action="<?php echo base_url()?>teacherController/searchStudent" method="post">
                                         <div class="container" style="padding-top: 30px;">
                                             <div class="input-group">
-                                                <input type="text" name="memberID" class="form-control" placeholder="Enter student ID ...">
-                                                <select>
+                                                <input type="text" name="memberID" class="form-control col-xl-8" placeholder="Enter student ID, Which is provide by BAUTE">
+<!--                                                <select>
                                                     <option>Select Semester</option>
                                                     <?php foreach ($semister as $sem) { ?>
                                                         <option value="<?php echo $sem->semCode ?>"><?php echo $sem->semName ?></option>
-<?php } ?>
-                                                </select>
-                                                <span class="input-group-btn">
-                                                    <button class="btn btn-search bg-c1" type="button"><i class="fa fa-search fa-fw"></i> Search</button>
+                                                    <?php } ?>
+                                                </select>-->
+                                                <span class="input-group-btn col-xl-4 col-md-4">
+                                                    <button class="btn btn-search bg-c1" type="submit"><i class="fa fa-search fa-fw"></i> Search</button>
                                                 </span>
                                             </div>
                                         </div>

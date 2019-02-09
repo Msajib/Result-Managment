@@ -69,7 +69,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url() ?>teacherController/">
+                                <a href="<?php echo base_url() ?>teacherController/SearchStudentValue">
                                     <i class="fas fa-chart-bar"></i>Student</a>
                             </li>
                             <li>
@@ -224,7 +224,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url() ?>teacherController/">
+                                    <a href="<?php echo base_url() ?>teacherController/SearchStudentValue">
                                         <i class="fas fa-chart-bar"></i>Student</a>
                                     <span class="inbox-num"></span>
                                 </li>

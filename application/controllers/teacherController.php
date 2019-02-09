@@ -62,7 +62,13 @@ class teacherController extends CI_Controller {
         foreach ($memberID as $key =>$value){
             $this->TModel->addMarks($value,$resultMark[$key],$subCode[$key],$semCode[$key]);
         }
-        redirect('teacherController/subjectSelect');
+//        $data = array();
+//        for ($i = 0; $i < count($memberID); $i++) {
+//            $data[] = array('memberID' => $memberID[$i], 'resultMark' => $resultMark[$i], 'subCode' => $subCode[$i], 'semCode' => $semCode[$i]);
+//            $this->TModel->addMarks($data);
+//        }
+
+            redirect('teacherController/subjectSelect');
     }
     function updateProfileInfo(){
         $memberID=$this->session->userdata('memberID');
@@ -89,8 +95,27 @@ class teacherController extends CI_Controller {
         
         
     }
+
+    function searchStudent() {
+        $memberID = $this->input->post('memberID', TRUE);
+        $data = array();
+        $data['studentProfile'] = $this->TModel->searchStudent($memberID);
+        $data['studentResult'] = $this->TModel->searchStudentResult($memberID);
+        
+        if ($data == TRUE) {
+            $this->load->view('Teacher/studentProfile', $data);
+        } else {
+            $error = array();
+            $error['message'] = "Student Not Found.Try another..";
+            $this->session->set_flashdata($error);
+            redirect('teacherController/index');
+        }
+    }
+    function SearchStudentValue(){
+        $this->load->view('Teacher/findStudent');
+    }
     
-    
-    
+
 }
+
 ?>

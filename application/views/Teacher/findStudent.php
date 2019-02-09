@@ -34,10 +34,6 @@
         <!-- Main CSS-->
         <link href="<?php echo base_url(); ?>MainSite/css/theme.css" rel="stylesheet" media="all">
 
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
     </head>
 
     <body class="animsition">
@@ -54,25 +50,26 @@
                         <div class="image img-cir img-120">
                             <img src="<?php echo $this->session->userdata('picture') ?>">
                         </div>
+
                         <h4 class="name">
                             <?php
-                            echo $this->session->userdata('firstName') . ' ' . $this->session->userdata('lastName')
+                            echo $this->session->userdata('firstName') . ' ' . $this->session->userdata('lastName');
                             ?>
                         </h4>
-                        <a style="color: red;" href="<?php echo base_url() ?>Welcome/index">Sign out</a>
+                        <a href="<?php echo base_url(); ?>welcome/index" style="color: red;">Sign out</a>
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
-                            <li>
+                            <li class="active has-sub">
                                 <a class="js-arrow" href="<?php echo base_url() ?>teacherController/index">
                                     <i class="fas fa-tachometer-alt"></i>Dashboard
                                 </a>
                             </li>
-                            <li class="active has-sub">
+                            <li>
                                 <a href="<?php echo base_url() ?>teacherController/SearchStudentValue">
                                     <i class="fas fa-chart-bar"></i>Student</a>
                             </li>
-                            <li >
+                            <li>
                                 <a href="<?php echo base_url() ?>teacherController/subjectSelect">
                                     <i class="fas fa-shopping-basket"></i>Assign Result</a>
                             </li>
@@ -207,31 +204,28 @@
                     <div class="menu-sidebar2__content js-scrollbar2">
                         <div class="account2">
                             <div class="image img-cir img-120">
-                                <img src="<?php echo $this->session->userdata('picture') ?>">
+                                <img src="<?php echo base_url(); ?>MainSite/images/icon/avatar-big-01.jpg" alt="John Doe" />
                             </div>
-                            <h4 class="name">
-                                <?php
-                                echo $this->session->userdata('fullName');
-                                ?>
-                            </h4>
-                            <a href="<?php echo base_url() ?>Welcome/index" style="color: red;">Sign out</a>
+                            <h4 class="name">john doe</h4>
+                            <a href="#">Sign out</a>
                         </div>
-                        <nav>
+                        <nav class="navbar-sidebar2">
                             <ul class="list-unstyled navbar__list">
-                                <li>
+                                <li class="active has-sub">
                                     <a class="js-arrow" href="<?php echo base_url() ?>teacherController/index">
                                         <i class="fas fa-tachometer-alt"></i>Dashboard
                                     </a>
                                 </li>
-                                <li class="active has-sub">
-                                    <a href="<?php echo base_url() ?>teacherController/SearchStudentValue">
+                                <li>
+                                    <a href="<?php echo base_url() ?>teacherController/">
                                         <i class="fas fa-chart-bar"></i>Student</a>
                                     <span class="inbox-num"></span>
                                 </li>
+                                <li>
                                     <a href="<?php echo base_url() ?>teacherController/studentResult">
                                         <i class="fas fa-shopping-basket"></i>Find Result</a>
                                 </li>
-                                <li >
+                                <li>
                                     <a href="<?php echo base_url() ?>teacherController/assignSubject">
                                         <i class="fas fa-shopping-basket"></i>Subject Assaign</a>
                                 </li>
@@ -265,7 +259,7 @@
                                                 <li class="list-inline-item seprate">
                                                     <span>/</span>
                                                 </li>
-                                                <li class="list-inline-item">Assign Result Of Student </li>
+                                                <li class="list-inline-item">Dashboard</li>
                                             </ul>
                                         </div>
 
@@ -277,76 +271,30 @@
                 </section>
                 <!-- END BREADCRUMB-->
 
-
-                <!-- END BREADCRUMB-->
-
                 <section>
                     <div class="section__content section__content--p30">
                         <div class="container-fluid">
                             <div class="row">
-                                <!--                            <div class="col-xl-8">
-                                                                 RECENT REPORT 2
-                                                                <form action="<?php echo base_url(); ?>teacherController/findResult">
-                                                                    <div class="container" style="padding-top: 30px;">
-                                                                        <div class="input-group">
-                                                                            <input type="text" name="memberID" class="form-control" placeholder="Enter student ID ...">
-                                                                            <select name="semCode">
-                                                                                <option>Select Semester</option>
-                                <?php foreach ($semister as $sem) { ?>
-                                                                                                    <option value="<?php echo $sem->semCode ?>"><?php echo $sem->semName ?></option>
-                                <?php } ?>
-                                                                            </select>
-                                                                            <span class="input-group-btn">
-                                                                                <button class="btn btn-search bg-c1" type="button"><i class="fa fa-search fa-fw"></i> Search</button>
-                                                                            </span>
-                                                                        </div>
-                                                                    </div>
-                                                                    </form>
-                                                                 END RECENT REPORT 2             
-                                                            </div>-->
                                 <div class="col-xl-12">
-                                    <!-- TASK PROGRESS-->
-                                    <div class="row">
-                                        <div class="col-lg-4 col-lg-offset-4">
-                                            <input type="search" id="search" value="" class="form-control" placeholder="Search by ID/Name...">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <form action="<?php echo base_url() ?>teacherController/addMarksStudent" method="post">
-                                                <table class="table" id="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="text-center">Student ID</th>
-                                                            <th class="">Result</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <?php foreach ($showSubject as $subject) { ?>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td class="text-center"><?php echo $subject->memberID ?>
-                                                                    <input type="hidden" class="form-control" name="memberID[]" value="<?php echo $subject->memberID;?>">
-                                                                    <input type="hidden" class="form-control" name="subCode[]" value="<?php echo $subject->subCode;?>">
-                                                                    <input type="hidden" class="form-control" name="semCode[]" value="<?php echo $subject->semCode;?>">
-                                                                </td>
-                                                                <td>
-                                                                    <div class="col-sm-4 centered">          
-                                                                        <input type="text" class="form-control" name="resultMark[]" value="<?php echo $subject->resultMark?>">
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
+                                    <h4 style="color: red;"><?php echo $this->session->flashdata('message');?></h4>
+                                    <!-- RECENT REPORT 2-->
+                                    <form action="<?php echo base_url()?>teacherController/searchStudent" method="post">
+                                        <div class="container" style="padding-top: 30px;">
+                                            <div class="input-group">
+                                                <input type="text" name="memberID" class="form-control col-xl-8" placeholder="Enter student ID, Which is provide by BAUTE">
+<!--                                                <select>
+                                                    <option>Select Semester</option>
+                                                    <?php foreach ($semister as $sem) { ?>
+                                                        <option value="<?php echo $sem->semCode ?>"><?php echo $sem->semName ?></option>
                                                     <?php } ?>
-
-                                                </table>
-                                                <div class="text-center">
-                                                    <button class="bg-c1 btn-lg btn-success glyphicon glyphicon-plus-sign" type="submit">Submit</button>
-                                                </div>
-                                            </form>
-                                            <hr>
+                                                </select>-->
+                                                <span class="input-group-btn col-xl-4 col-md-4">
+                                                    <button class="btn btn-search bg-c1" type="submit"><i class="fa fa-search fa-fw"></i> Search</button>
+                                                </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- END TASK PROGRESS-->
+                                    </form>
+                                    <!-- END RECENT REPORT 2             -->
                                 </div>
                             </div>
                         </div>
@@ -396,7 +344,6 @@
 
         <!-- Main JS-->
         <script src="<?php echo base_url(); ?>MainSite/js/main.js"></script>
-        <script src="//rawgithub.com/stidges/jquery-searchable/master/dist/jquery.searchable-1.0.0.min.js"></script>
 
     </body>
 

@@ -53,6 +53,22 @@ class teacher_Model extends CI_Model {
         $this->db->where('memberID', $memberID);
         $this->db->update('teachertable', $data);
     }
+    function searchStudent($memberID){
+        $this->db->select('*');
+        $this->db->from('usertable');
+        $this->db->where('memberID', $memberID);
+        $query = $this->db->get();
+        $result = $query->result();
+        return $result;       
+    }
+    function searchStudentResult($memberID){
+       $this->db->select('*');
+        $this->db->from('studentassignsubject');
+        $this->db->where('memberID', $memberID);
+        $query = $this->db->get();
+        $result = $query->result();
+        return $result; 
+    }
 
 }
     
