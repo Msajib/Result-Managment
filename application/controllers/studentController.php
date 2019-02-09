@@ -62,6 +62,22 @@ class studentController extends CI_Controller {
 
         redirect('studentController/selectSubject');
     }
+    function studentResult(){
+        $data=array();
+        $data['semister'] = $this->SModel->getSemister();
+        $this->load->view('Student/studentResult',$data);
+    }
+    function findResult(){
+        $memberID = $this->input->post('memberID',TRUE);
+        $semCode = $this->input->post('semisterID',TRUE);
+        $data = array();
+        $data['result'] = $this->SModel->getResultOfStudent($memberID,$semCode);
+//        echo '<pre>';
+//        print_r($result);
+//        exit();
+        $this->load->view('Student/resultStatus',$data);
+        
+    }
 
 }
 ?>

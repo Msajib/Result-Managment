@@ -59,13 +59,13 @@
                 </div>
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
+                        <li >
                             <a class="js-arrow" href="<?php echo base_url()?>studentController/index">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard
                                 
                             </a>
                         </li>
-                        <li>
+                        <li class="active has-sub">
                             <a href="<?php echo base_url();?>studentController/studentResult">
                                 <i class="fas fa-chart-bar"></i>Result</a>
                         </li>
@@ -257,7 +257,7 @@
                                             <li class="list-inline-item seprate">
                                                 <span>/</span>
                                             </li>
-                                            <li class="list-inline-item">Dashboard</li>
+                                            <li class="list-inline-item">Result</li>
                                         </ul>
                                     </div>
                                     
@@ -288,33 +288,34 @@
             </section>
             <!-- END BREADCRUMB-->
 
+            <section class="search-sec" style="margin-top: 10%;">
+               <div class="container">
+                   <form action="<?php echo base_url() ?>studentController/findResult" method="post" novalidate="novalidate">
+                       <div class="row">
+                           <div class="col-lg-12">
+                               <div class="row">
+                                   <input type="hidden" name="memberID" class="form-control search-slt" value="<?php echo $this->session->userdata('memberID');?>">
+                                   <div class="col-lg-9 col-md-9 col-sm-12 p-0">
+                                       <div class="col-lg-12 col-md-12 col-sm-12 p-0">
+                                            <select class="form-control search-slt" id="exampleFormControlSelect1" name="semisterID">
+                                                <option>Select Semester</option>
+                                                <?php foreach ($semister as $sem) { ?>
+                                                    <option value="<?php echo $sem->semCode ?>"><?php echo $sem->semName; ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                   </div>
+                                   <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                       <button type="submit" class="btn btn-success wrn-btn">Search</button>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </form>
+               </div>
+           </section>
+
            <section>
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-xl-8">
-                                <!-- RECENT REPORT 2-->
-                                
-                                <!-- END RECENT REPORT 2             -->
-                            </div>
-                            <div class="col-xl-4">
-                                <!-- TASK PROGRESS-->
-                                 <div class="table-responsive table-data bg-c1" style="padding-top: 30px;">
-                                    <?php foreach ($routine as $routine){?>
-                                    <!-- For those without native support, no pdf plugin, or no js -->
-                                    <h3 class="text-center bg-c3">Class <span style="color: whitesmoke;">Routine</span> bellow there ...</h3>
-                                    <h3 style="padding-top: 50px;">Click here...<a href="<?php echo $routine->routineFile; ?>" target="_blank" style="color: red;">Download</a></h3>
-                                        </object>
-                                    <?php } ?>
-                                </div>
-                                <!-- END TASK PROGRESS-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">

@@ -59,13 +59,13 @@
                 </div>
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
+                        <li >
                             <a class="js-arrow" href="<?php echo base_url()?>studentController/index">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard
                                 
                             </a>
                         </li>
-                        <li>
+                        <li class="active has-sub">
                             <a href="<?php echo base_url();?>studentController/studentResult">
                                 <i class="fas fa-chart-bar"></i>Result</a>
                         </li>
@@ -257,7 +257,7 @@
                                             <li class="list-inline-item seprate">
                                                 <span>/</span>
                                             </li>
-                                            <li class="list-inline-item">Dashboard</li>
+                                            <li class="list-inline-item">Result</li>
                                         </ul>
                                     </div>
                                     
@@ -288,33 +288,64 @@
             </section>
             <!-- END BREADCRUMB-->
 
-           <section>
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-xl-8">
-                                <!-- RECENT REPORT 2-->
-                                
-                                <!-- END RECENT REPORT 2             -->
-                            </div>
-                            <div class="col-xl-4">
-                                <!-- TASK PROGRESS-->
-                                 <div class="table-responsive table-data bg-c1" style="padding-top: 30px;">
-                                    <?php foreach ($routine as $routine){?>
-                                    <!-- For those without native support, no pdf plugin, or no js -->
-                                    <h3 class="text-center bg-c3">Class <span style="color: whitesmoke;">Routine</span> bellow there ...</h3>
-                                    <h3 style="padding-top: 50px;">Click here...<a href="<?php echo $routine->routineFile; ?>" target="_blank" style="color: red;">Download</a></h3>
-                                        </object>
-                                    <?php } ?>
-                                </div>
-                                <!-- END TASK PROGRESS-->
-                            </div>
+            <section class="search-sec" style="margin-top: 10%;">
+                <div class="container bg-c1">
+                    <div class="card ">
+                        <div class="card-header text-center">
+                            Result Of <span style="color: yellowgreen;"><?php echo $this->session->userdata('firstName'); ?> <?php echo $this->session->userdata('lastName'); ?></span>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-light">
+                                <tr>
+                                    <th scope="col">Subject Code</th>
+                                    <th scope="col">Marks</th>
+                                </tr>
+
+                                <?php foreach ($result as $res) { ?>
+                                <tr>
+                                        <td scope="row"><?php echo $res->subCode;
+                                $res->resultMark; ?></td>
+                                        <td scope="row">
+                                            <?php
+                                            if ($res->resultMark < 40) {
+                                                echo 'F';
+                                            }
+                                            else if ($res->resultMark < 45) {
+                                                echo 'D';
+                                            }
+                                            else if ($res->resultMark < 50) {
+                                                echo 'C';
+                                            }
+                                            else if ($res->resultMark < 55) {
+                                                echo 'C+';
+                                            }else if ($res->resultMark < 60) {
+                                                echo 'B-';
+                                            }
+                                            else if ($res->resultMark < 65) {
+                                                echo 'B';
+                                            }
+                                            else if ($res->resultMark < 70) {
+                                                echo 'B+';
+                                            }
+                                            else if ($res->resultMark < 75) {
+                                                echo 'A-';
+                                            }
+                                            else if ($res->resultMark < 80) {
+                                                echo 'A';
+                                            }
+                                            else{
+                                                echo 'A+';
+                                            }
+                                            ?></td>
+                                    </tr>
+                                <?php } ?>
+                            </table>
                         </div>
                     </div>
                 </div>
             </section>
-            
-            <section>
+
+           <section>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
@@ -362,3 +393,5 @@
 
 </html>
 <!-- end document-->
+
+

@@ -30,5 +30,14 @@ class student_Model extends CI_Model {
         $this->db->where('memberID', $memberID);
         $this->db->update('usertable', $data);
     }
+    function getResultOfStudent($memberID,$semCode){
+        $this->db->select('*');
+        $this->db->from('studentassignsubject');
+        $this->db->where('memberID', $memberID);
+        $this->db->where('semCode', $semCode);
+        $query = $this->db->get();
+        $result = $query->result();
+        return $result;
+    }
     
 }
