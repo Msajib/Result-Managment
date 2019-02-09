@@ -57,14 +57,14 @@
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
-                            <li class="active has-sub">
+                            <li>
                                 <a class="js-arrow" href="<?php echo base_url() ?>studentController/index">
                                     <i class="fas fa-tachometer-alt"></i>Dashboard
 
                                 </a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url(); ?>studentController/result">
+                                <a href="<?php echo base_url(); ?>studentController/studentResult">
                                     <i class="fas fa-chart-bar"></i>Result</a>
                             </li>
                             <li>
@@ -75,7 +75,7 @@
                                 <a href="<?php echo base_url(); ?>studentController/selectSubject">
                                     <i class="fas fa-shopping-basket"></i>Subject</a>
                             </li>
-                            <li>
+                            <li class="active has-sub">
                                 <a href="<?php echo base_url() ?>studentController/updateProfile">
                                     <i class="fas fa-shopping-basket"></i>Update Profile</a>
                             </li>
@@ -208,14 +208,14 @@
                         </div>
                         <nav class="navbar-sidebar2">
                             <ul class="list-unstyled navbar__list">
-                                <li class="active has-sub">
+                                <li>
                                     <a class="js-arrow" href="<?php echo base_url() ?>studentController/index">
                                         <i class="fas fa-tachometer-alt"></i>Dashboard
 
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>studentController/result">
+                                    <a href="<?php echo base_url(); ?>studentController/studentResult">
                                         <i class="fas fa-chart-bar"></i>Result</a>
                                 </li>
                                 <li>
@@ -226,7 +226,7 @@
                                     <a href="<?php echo base_url(); ?>studentController/selectSubject">
                                         <i class="fas fa-shopping-basket"></i>Subject</a>
                                 </li>
-                                <li>
+                                <li  class="active has-sub">
                                     <a href="<?php echo base_url() ?>studentController/updateProfile">
                                         <i class="fas fa-shopping-basket"></i>Update Profile</a>
                                 </li>
@@ -253,7 +253,7 @@
                                                 <li class="list-inline-item seprate">
                                                     <span>/</span>
                                                 </li>
-                                                <li class="list-inline-item">Dashboard</li>
+                                                <li class="list-inline-item">Update Profile</li>
                                             </ul>
                                         </div>
 

@@ -66,7 +66,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url();?>studentController/result">
+                            <a href="<?php echo base_url();?>studentController/studentResult">
                                 <i class="fas fa-chart-bar"></i>Result</a>
                         </li>
                         <li>
@@ -204,9 +204,7 @@
                                 <img src="<?php echo $this->session->userdata('picture') ?>">
                             </div>
                             <h4 class="name">
-                                <?php
-                                echo $this->session->userdata('fullName');
-                                ?>
+                                <?php echo $this->session->userdata('fullName');?> <?php echo $this->session->userdata('fullName');?>
                             </h4>
                             <a href="<?php echo base_url() ?>Welcome/index" style="color: red;">Sign out</a>
                         </div>
@@ -219,7 +217,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>studentController/result">
+                                    <a href="<?php echo base_url(); ?>studentController/studentResult">
                                         <i class="fas fa-chart-bar"></i>Result</a>
                                 </li>
                                 <li>

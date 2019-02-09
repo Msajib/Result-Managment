@@ -59,7 +59,7 @@
                 </div>
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
-                        <li >
+                        <li>
                             <a class="js-arrow" href="<?php echo base_url()?>studentController/index">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard
                                 
@@ -208,7 +208,7 @@
                                 echo $this->session->userdata('firstName').' '.$this->session->userdata('lastName');
                                 ?>
                             </h4>
-                            <a href="<?php echo base_url() ?>Welcome/index">Sign out</a>
+                        <a style="color: red;" href="<?php echo base_url() ?>Welcome/index">Sign out</a>
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
@@ -219,7 +219,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url(); ?>studentController/result">
+                                <a href="<?php echo base_url(); ?>studentController/studentResult">
                                     <i class="fas fa-chart-bar"></i>Result</a>
                             </li>
                             <li>

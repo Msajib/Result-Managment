@@ -53,21 +53,21 @@
                         <h4 class="name">
                             <?php echo $this->session->userdata('firstName'); ?> <?php echo $this->session->userdata('lastName'); ?>
                         </h4>
-                        <a href="<?php echo base_url() ?>Welcome/index">Sign out</a>
+                        <a style="color: red;" href="<?php echo base_url() ?>Welcome/index">Sign out</a>
                     </div>
                     <nav class="navbar-sidebar2">
                         <ul class="list-unstyled navbar__list">
-                            <li class="active has-sub">
+                            <li>
                                 <a class="js-arrow" href="<?php echo base_url() ?>studentController/index">
                                     <i class="fas fa-tachometer-alt"></i>Dashboard
 
                                 </a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url(); ?>studentController/result">
+                                <a href="<?php echo base_url(); ?>studentController/studentResult">
                                     <i class="fas fa-chart-bar"></i>Result</a>
                             </li>
-                            <li>
+                            <li class="active has-sub">
                                 <a href="<?php echo base_url() ?>studentController/studentProfile">
                                     <i class="fas fa-shopping-basket"></i>Profile</a>
                             </li>
@@ -204,21 +204,21 @@
                             <h4 class="name">
                                 <?php echo $this->session->userdata('firstName'); ?> <?php echo $this->session->userdata('lastName'); ?>
                             </h4>
-                            <a href="<?php echo base_url() ?>Welcome/index">Sign out</a>
+                            <a style="color: red;" href="<?php echo base_url() ?>Welcome/index">Sign out</a>
                         </div>
                         <nav class="navbar-sidebar2">
                             <ul class="list-unstyled navbar__list">
-                                <li class="active has-sub">
+                                <li>
                                     <a class="js-arrow" href="<?php echo base_url() ?>studentController/index">
                                         <i class="fas fa-tachometer-alt"></i>Dashboard
 
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>studentController/result">
+                                    <a href="<?php echo base_url(); ?>studentController/studentResult">
                                         <i class="fas fa-chart-bar"></i>Result</a>
                                 </li>
-                                <li>
+                                <li class="active has-sub">
                                     <a href="<?php echo base_url() ?>studentController/studentProfile">
                                         <i class="fas fa-shopping-basket"></i>Profile</a>
                                 </li>
@@ -310,55 +310,55 @@
                                             <div class="form-group">
                                                 <label class="col-md-12">First Name</label>
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('firstName'); ?>">
+                                                    <input type="text" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('firstName'); ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-12">Last Name</label>
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('lastName'); ?>">
+                                                    <input type="text" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('lastName'); ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-12">Nick Name</label>
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('nickName'); ?>">
+                                                    <input type="text" placeholder="Update Your Nick Name" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('nickName'); ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-12">Date of Birth</label>
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('dateOfBirth'); ?>">
+                                                    <input type="text" placeholder="Update Your DOB" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('dateOfBirth'); ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-12">Place of Birth</label>
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('placeOfBirth'); ?>">
+                                                    <input type="text" placeholder="Update Your POB" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('placeOfBirth'); ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-12">Gender</label>
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('gender'); ?>">
+                                                    <input type="text" placeholder="Update Your Gender" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('gender'); ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-12">Matital Status</label>
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('maritalStatus'); ?>">
+                                                    <input type="text" placeholder="Update Your Merital Status" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('maritalStatus'); ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-12">Blood Group</label>
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('bloodGroup'); ?>">
+                                                    <input type="text" placeholder="Update Your Blood Group" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('bloodGroup'); ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-12">Religion</label>
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('religion'); ?>">
+                                                    <input type="text" placeholder="Update Your Religion" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('religion'); ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -370,31 +370,31 @@
                                             <div class="form-group">
                                                 <label class="col-md-12">National ID</label>
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('nationalID'); ?>">
+                                                    <input type="text" placeholder="Update Your National ID" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('nationalID'); ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-12">Passport</label>
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('passport'); ?>">
+                                                    <input type="text" placeholder="Update Your Passport" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('passport'); ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-12">IM</label>
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('IM'); ?>">
+                                                    <input type="text" placeholder="Update Your IM Number" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('IM'); ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-12">Social Network ID</label>
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="Johnathan Doe" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('socialNetwork'); ?>">
+                                                    <input type="text" placeholder="Update Your Social Network" readonly class="form-control form-control-line" value="<?php echo $this->session->userdata('socialNetwork'); ?>">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-md-12">About You</label>
                                                 <div class="col-md-12">
-                                                    <textarea rows="2" class="form-control form-control-line"><?php echo $this->session->userdata('aboutYou'); ?></textarea>
+                                                    <textarea rows="2" placeholder="Update Your About You" class="form-control form-control-line"><?php echo $this->session->userdata('aboutYou'); ?></textarea>
                                                 </div>
                                             </div>
                                         </div>
